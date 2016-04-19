@@ -6,7 +6,7 @@ var User = require('../models/user');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 //comment out when deploying to heroku
-var OAuth = require('../secrets');
+// var OAuth = require('../secrets');
 
 
 module.exports = function(passport){
