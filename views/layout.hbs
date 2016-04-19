@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Netflix and Chill</title>
+	
+	<!-- bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- 	custom CSS -->
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<!-- 	jquery -->
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<!-- 	custom scripts -->
+	<script src="/js/app.js"></script>
+	<!--bootstrap js -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- <script src="/socket.io/socket.io.js"></script> -->
+
+</head>
+<body>
+
+<div>
+{{!-- need to pass in data for user --}}
+
+  {{#if currentUser}}
+    {{> logged_in_navbar}}
+  {{else}}
+    {{> logged_out_navbar}}
+  {{/if}}
+</div>
+{{{body}}}
+
+</body>
+
+</html>

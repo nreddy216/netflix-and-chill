@@ -1,0 +1,63 @@
+{{!-- {{> my_sidebar}} --}}
+<div id="sidebar" class="col-md-4">
+	<div id="sidebar-content">
+		<img src="{{user.profilePic}}"></img>
+		<p class="text-lg">{{user.firstName}} {{user.lastName}}</p>
+		<p class="text-md">{{user.gender}}, born {{user.birthday}}</p>
+		<p class="text-md">Location: {{#if user.location}}
+						{{user.location}}
+					{{else}}
+						<span>?</span>
+					{{/if}}</p>
+		<p class="text-md">Interested in: 
+			{{#if user.sexualPref}}
+				{{user.sexualPref}}
+			{{else}}
+				<span>?</span>
+			{{/if}}</p>
+					
+		<p class="text-md">Status: 
+			{{#if user.status}}
+				{{user.status}}
+			{{else}}
+				{{#ifUser user currentUser}}
+					<span><i>What are you currently watching?</i></span>
+				{{/ifUser}}
+			{{/if}}</p>
+	</div>
+</div>
+
+
+
+
+<div class="container">
+	<div id="edit-profile-div" class="col-md-8 col-md-offset-4">
+		<form id="edit-profile-form" class="form" action="/users/{{user._id}}?_method=put" method="POST">
+			<input type="hidden" name="userId" value={{user._id}}>
+			<label for="status" class="form-group text-md"><span style="color: red">Status (<i>max 60 characters</i>)</span></label>
+			<input type="text" id="status" name="status" class="form-control text-md" style="color: black" maxlength="60" value="{{user.status}}"><br>
+			<label for="firstName" class="form-group text-md">First Name</label>
+			<input type="text" id="firstName" name="firstName" class="form-control text-md" style="color: black"  value={{user.firstName}}><br>
+			<label for="lastName" class="form-group text-md">Last Name</label>
+			<input type="text" id="lastName" name="lastName"  class="form-control text-md" style="color: black"  value={{user.lastName}}><br>
+			<label for="gender" class="form-group text-md">Gender <span><i>(please specify "male", "female", or "other")</i></span></label>
+			<input type="text" id="gender" name="gender"  class="form-control text-md" style="color: black"  value="{{user.gender}}"><br>
+			<label for="birthday" class="form-group text-md">Birthday</label>
+			<input type="text" id="birthday" name="birthday"  class="form-control text-md" style="color: black"  value="{{user.birthday}}"><br>
+			<label for="sexualPref" class="form-group text-md">Interested in</label>
+			<input type="text" id="sexualPref" name="sexualPref"  class="form-control text-md" style="color: black"  value="{{user.sexualPref}}"><br>
+			<label for="location" class="form-group text-md">Location</label>
+			<input type="text" id="location" name="location"  class="form-control text-md" style="color: black"  value="{{user.location}}"><br>
+			<div id="save-changes-button">
+				<input type="submit" value="Save Changes" class="btn btn-default text-md"></input>
+			</div>
+		</form>
+		<br>
+		<div id="edit-buttons">
+			<a href="/users/{{user._id}}" class="btn btn-default text-md">Cancel</a><br><br>
+
+			<form action="/users/{{user._id}}?_method=DELETE" method="POST">
+			<button type="submit" id="delete-account-button" class="btn btn-danger text-md">Delete Account</button>
+		</div>
+	</div>
+</div>

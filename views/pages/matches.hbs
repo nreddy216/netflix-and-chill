@@ -1,0 +1,20 @@
+<div id="matches-page" class="container">
+	<h1>{{user.firstName}}'s Matches</h1>
+	<div id="matches-div">
+	{{#unless myMatches}}
+		You currently have no matches. Add more movies so you won't be alone!
+	{{/unless}}
+	{{#each myMatches}}
+		<div class="match-div col-md-4">
+			<a href="/users/{{id}}"><img class="match-image" src="{{profilePic}}"></a>
+			<br>
+			<a class="match-name" href="/users/{{id}}"><p>{{firstName}} {{lastName}}</p></a>
+
+			<p>{{gender}}{{#if location}}, {{location}}{{else}}{{/if}}</p>
+			<p>{{#if sexualPref}}Interested in: {{sexualPref}}{{else}}Interested in: ?{{/if}}</p>
+			<p>You and {{firstName}} have {{inCommon.length}} movie(s) in common!</p>
+				<a href='https://facebook.com/{{facebookID}}' target='_blank'><img class='fb-logo' src='/images/fb-logo.svg' /></a>
+		</div>
+	{{/each}}
+	</div>
+</div>

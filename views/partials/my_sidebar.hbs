@@ -1,0 +1,36 @@
+{{!-- COMMENTED OUT, USING HARD DATA FOR NOW --}}
+<div id="sidebar" class="col-md-4">
+	<div id="sidebar-content">
+		<img src="{{user.profilePic}}"></img>
+		<br>
+		<br>
+		<p class="text-lg">{{user.firstName}} {{user.lastName}}</p>
+		<p class="text-md">{{user.gender}}, born {{user.birthday}}</p>
+		<p class="text-md">Location: {{#if user.location}}
+						{{user.location}}
+					{{else}}
+						<span>?</span>
+					{{/if}}</p>
+		<p class="text-md">Interested in: 
+			{{#if user.sexualPref}}
+				{{user.sexualPref}}
+			{{else}}
+				<span>?</span>
+			{{/if}}</p>
+					
+		<p class="text-md">Status: 
+			{{#if user.status}}
+				{{user.status}}
+			{{else}}
+				{{#ifUser user currentUser}}
+					<span><i>What are you currently watching?</i></span>
+				{{/ifUser}}
+			{{/if}}</p>
+	</div>
+	{{#ifUser user currentUser}}
+	<div id="sidebar-buttons">
+		<a href="/users/{{user._id}}/edit" class="btn btn-default text-md" id="edit-profile-button">Edit My Profile</a>
+	</div>
+	{{/ifUser}}
+</div>
+
