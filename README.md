@@ -1,18 +1,19 @@
-#Netflix and "Chill"
+#Netflix and Chill
 ###Coming soon to a couch near you
 
-Netflix & Chill is an app to help you find romance based on common interests in movies and TV show (the things that really matter).
+Netflix & Chill is an app to help you find romance based on common interests in movies and TV show (the things that really matter in life).
 
-This was a group project created with my team Jessie Hong & Brian Li, and I forked it in order to make a few changes without wreaking havoc on the original copy.
+This was a group project created with my team Jessie Hong & Brian Li, and I forked it to play with on my own.
+
+My contributions include detailed wireframing in Balsamiq(below), client-side AJAX calls to retrieve movie data, server-side CRUD functionality to add/delete movies, and task management.
 
 --------------------------------------------------------------------
-##Planning Phase
+##Project planning
 [Trello](https://trello.com/b/IG8cM9yL/netflix-chill)
 
----------------------------------------------------------------------
-##Initial Wireframes
+##Initial wireframes
 
-####Landing Page
+####Landing page
 ![alt tag](https://trello-attachments.s3.amazonaws.com/56e271e18ae6264478aee297/1024x600/f95d42838a647f9d88999f2d3f480635/Homepage.png)
 
 ####Login with Facebook
