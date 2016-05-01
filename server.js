@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
-var session = require('express-session');
+// var session = require('express-session');
 var User = require('./models/user');
 // mongoose.connect('mongodb://localhost/netflixandchill');
 mongoose.connect( process.env.MONGOLAB_URI ||
