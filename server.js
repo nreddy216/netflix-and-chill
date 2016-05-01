@@ -25,7 +25,9 @@ app.use(
     interval: 1200000
   }),
   cookie: { maxAge: 1200000 },
-  secret: 'my secret'
+  secret: 'mySecretKey',
+  resave: false,
+  saveUninitialized: true
 }))
 
 // Setting up for config/routes
@@ -65,13 +67,13 @@ app.use(passport.initialize()); // initialization for passport
 app.use(passport.session());
 
 //sessions stuff
-app.use(
-  session({
-    secret:'mySecretKey',
-    resave: false,
-    saveUninitialized: true
-  })
-);
+// app.use(
+//   session({
+//     secret:'mySecretKey',
+//     resave: false,
+//     saveUninitialized: true
+//   })
+// );
 
 //extend 'req' to help manage sessions
 app.use(function (req, res, next) {
