@@ -15,7 +15,18 @@ mongoose.connect( process.env.MONGOLAB_URI ||
 // passport for facebook OAuth
 var passport = require('passport');
 var cookieParser   = require("cookie-parser");
-var session = require('express-session');
+// var session = require('express-session');
+//SessionStore
+var session = require('session-mongoose')(express);
+app.use(
+  express.session({
+    store: new session({
+    url: 'mongodb://localhost/session',
+    interval: 1200000
+  }),
+  cookie: { maxAge: 1200000 },
+  secret: 'my secret'
+}))
 
 // Setting up for config/routes
 var routes = require('./config/routes');
