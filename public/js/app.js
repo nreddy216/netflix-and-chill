@@ -94,9 +94,9 @@ function renderLikes(){
 
 
             var movieDiv = "<div class= 'movie-div col-md-4' id=" + movieID + ">"
-            
+
             movieDiv += "<form class='delete-like' onsubmit='deleteLike(event)'>"
-                  +  "<input type='submit' class='delete-btn' value='-' style='color:black'></input>"
+                  +  "<input type='button' class='delete-btn' value='-' style='color:black'></input>"
                   +  "</form>";
 
             movieDiv += "<img src=" + result.Poster + " class='movie-image'><p class='text-lg'>" + result.Title + "</p></div>";
@@ -192,7 +192,7 @@ function getMovies(){
           //adds a button to each movie (+)
           movie += "<div class='search-movie-item col-md-4'><form class='add-movie-btn' onsubmit='addMovieToUsers(event)'>"
                 +  "<input class='hidden' type='hidden' value=" + imdbID + " name='like' id=" + imdbID + "></input>"
-                +  "<input type='submit' value='+' style='color:black'></input>"
+                +  "<input class='add-btn' type='button' value='+' style='color:black'></input>"
                 +  "</form>";
           //if there is no poster URL then it just adds a default image
           if(element.Poster !== "N/A"){
