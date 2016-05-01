@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var usersController = require('../controllers/usersController');
 var passport = require('passport');
-var session = require('express-session');
+// var session = require('express-session');
 var User = require('../models/user');
 //debugging
 var repl = require('repl');
